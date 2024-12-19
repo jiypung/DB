@@ -1,7 +1,7 @@
 CREATE TABLE audience (
     audience_id VARCHAR(20) NOT NULL,
     audience_name VARCHAR(20) NOT NULL,
-    age INTEGER DEFAULT 0 CHECK (age >= 0), 
+    age INTEGER CHECK (age >= 0), 
     address VARCHAR(30),
     membership_rank VARCHAR(10) DEFAULT 'silver' 
         CHECK (membership_rank IN ('silver', 'gold', 'vip')), 
@@ -51,6 +51,3 @@ VALUES
 ('9465124', '계좌이체', '2022-10-23', 'leet3'),
 ('9512423', '신용카드', '2022-12-18', 'leet4'),
 ('8513452', '체크카드', '2024-01-03', 'leet5');
-
-SELECT *
-FROM audience;
