@@ -1,9 +1,10 @@
 CREATE TABLE audience (
     audience_id VARCHAR(20) NOT NULL,
     audience_name VARCHAR(20) NOT NULL,
-    age INTEGER DEFAULT 0,
+    age INTEGER DEFAULT 0 CHECK (age >= 0), 
     address VARCHAR(30),
-    membership_rank VARCHAR(20) NOT NULL,
+    membership_rank VARCHAR(10) DEFAULT 'silver' 
+        CHECK (membership_rank IN ('silver', 'gold', 'vip')), 
     PRIMARY KEY (audience_id)
 );
 
