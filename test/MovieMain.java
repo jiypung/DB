@@ -31,7 +31,6 @@ public class MovieMain {
                         System.out.println("\n관객 찾기:");
                         System.out.println(audience);
 
-                        // 영화 및 결제 정보 출력
                         System.out.println("\n영화와 결제방법:");
                         List<Movie> movies = MovieService.getMoviesByAudienceName(audienceName);
                         if (movies != null) {
@@ -64,13 +63,12 @@ public class MovieMain {
                         continue;
                     }
 
-                    int age;
+                    Integer age = null;
                     while (true) {
-                        System.out.print("나이를 입력해주세요: ");
+                        System.out.print("나이를 입력해주세요 (빈칸 입력 시 생략됩니다): ");
                         String ageInput = scanner.nextLine();
                         if (ageInput.isEmpty()) {
-                            age = 0; // 디폴트 값
-                            System.out.println("빈칸으로 입력되었습니다. 나이는 0으로 설정됩니다.");
+                            System.out.println("빈칸으로 입력되었습니다. 나이는 NULL로 설정됩니다.");
                             break;
                         }
                         try {
@@ -84,7 +82,7 @@ public class MovieMain {
                     System.out.print("주소를 입력해주세요: ");
                     String address = scanner.nextLine();
                     if (address.isEmpty()) {
-                        address = null; // NULL 허용
+                        address = null;
                         System.out.println("주소는 비워둘 수 있습니다.");
                     }
 
@@ -93,7 +91,7 @@ public class MovieMain {
                         System.out.print("멤버쉽 등급을 입력해주세요 (가능한 값: silver, gold, vip): ");
                         membershipRank = scanner.nextLine().toLowerCase();
                         if (membershipRank.isEmpty()) {
-                            membershipRank = "silver"; // 디폴트 값
+                            membershipRank = "silver";
                             System.out.println("빈칸으로 입력되었습니다. 멤버쉽 등급은 'silver'로 설정됩니다.");
                             break;
                         } else if (!membershipRank.equals("silver") && !membershipRank.equals("gold") && !membershipRank.equals("vip")) {
@@ -103,7 +101,7 @@ public class MovieMain {
                         }
                     }
 
-                    int result = MovieService.addNewAudience(audienceId, newAudienceName, age, address, membershipRank);
+                    int result = MovieService.addNewAudience(audienceId, newAudienceName, (age != null ? age : 0), address, membershipRank);
                     if (result > 0) {
                         System.out.println("관객 등록이 성공적으로 이루어졌습니다.");
                     } else {
@@ -111,11 +109,11 @@ public class MovieMain {
                     }
                     break;
 
-                case "3": // 종료
+                case "3":
                     System.out.println("\n프로그램을 종료합니다.");
                     return;
 
-                default: // 잘못된 입력
+                default:
                     System.out.println("\n잘못된 입력입니다. 다시 입력해주시길 바랍니다.");
             }
         }
