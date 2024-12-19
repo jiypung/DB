@@ -40,26 +40,72 @@ public class MovieMain {
                             System.out.println("영화나 결제가 없습니다.");
                         }
                     } else {
-                        System.out.println("\n해당 이름의 관객을 찾을 수 없습니다'" + audienceName + "'.");
+                        System.out.println("\n해당 이름의 관객을 찾을 수 없습니다: '" + audienceName + "'.");
                     }
                     break;
 
                 case "2": // 추가
                     System.out.println("\n===== Add New Audience =====");
-                    System.out.print("관객 ID를 입력해주세요: ");
-                    String audienceId = scanner.nextLine();
+                    String audienceId;
+                    while (true) {
+                        System.out.print("관객 ID를 입력해주세요: ");
+                        audienceId = scanner.nextLine();
+                        if (audienceId.isEmpty()) {
+                            System.out.println("관객 ID는 필수 입력 항목입니다. 다시 입력해주세요.");
+                        } else {
+                            break;
+                        }
+                    }
+
                     System.out.print("관객 이름을 입력해주세요: ");
                     String newAudienceName = scanner.nextLine();
-                    System.out.print("나이를 입력해주세요: ");
-                    int age = Integer.parseInt(scanner.nextLine());
+                    if (newAudienceName.isEmpty()) {
+                        System.out.println("관객 이름은 필수 입력 항목입니다. 다시 입력해주세요.");
+                        continue;
+                    }
+
+                    int age;
+                    while (true) {
+                        System.out.print("나이를 입력해주세요: ");
+                        String ageInput = scanner.nextLine();
+                        if (ageInput.isEmpty()) {
+                            age = 0; // 디폴트 값
+                            System.out.println("빈칸으로 입력되었습니다. 나이는 0으로 설정됩니다.");
+                            break;
+                        }
+                        try {
+                            age = Integer.parseInt(ageInput);
+                            break;
+                        } catch (NumberFormatException e) {
+                            System.out.println("유효하지 않은 나이입니다. 숫자를 입력해주세요.");
+                        }
+                    }
+
                     System.out.print("주소를 입력해주세요: ");
                     String address = scanner.nextLine();
-                    System.out.print("멤버쉽링크를 입력해주세요: ");
-                    String membershipRank = scanner.nextLine();
+                    if (address.isEmpty()) {
+                        address = null; // NULL 허용
+                        System.out.println("주소는 비워둘 수 있습니다.");
+                    }
+
+                    String membershipRank;
+                    while (true) {
+                        System.out.print("멤버쉽 등급을 입력해주세요 (가능한 값: silver, gold, vip): ");
+                        membershipRank = scanner.nextLine().toLowerCase();
+                        if (membershipRank.isEmpty()) {
+                            membershipRank = "silver"; // 디폴트 값
+                            System.out.println("빈칸으로 입력되었습니다. 멤버쉽 등급은 'silver'로 설정됩니다.");
+                            break;
+                        } else if (!membershipRank.equals("silver") && !membershipRank.equals("gold") && !membershipRank.equals("vip")) {
+                            System.out.println("해당 멤버쉽 등급은 존재하지 않습니다. 다시 입력해주세요.");
+                        } else {
+                            break;
+                        }
+                    }
 
                     int result = MovieService.addNewAudience(audienceId, newAudienceName, age, address, membershipRank);
                     if (result > 0) {
-                        System.out.println("관객 등록이 성공적으로 이루어졌습니다");
+                        System.out.println("관객 등록이 성공적으로 이루어졌습니다.");
                     } else {
                         System.out.println("관객 등록에 실패했습니다.");
                     }
@@ -75,4 +121,3 @@ public class MovieMain {
         }
     }
 }
-
