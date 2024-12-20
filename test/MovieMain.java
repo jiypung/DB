@@ -1,4 +1,4 @@
-package test;
+package db.test.movie;
 
 import java.util.List;
 import java.util.Scanner;
@@ -7,9 +7,9 @@ public class MovieMain {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        System.out.println("1. 고객 추가");
         while (true) {
             System.out.println("\n=== 영화 관리 시스템 ===");
-            System.out.println("1. 고객 추가");
             System.out.println("2. 고객 조회 (전체)");
             System.out.println("3. 고객 조회 (ID로)");
             System.out.println("4. 고객 정보 갱신");
@@ -18,8 +18,7 @@ public class MovieMain {
             System.out.println("7. 종료");
             System.out.print("선택: ");
             int choice = scanner.nextInt();
-            scanner.nextLine(); // Enter 키 제거
-
+            scanner.nextLine();
             switch (choice) {
                 case 1 -> {
                     System.out.print("고객 ID: ");
@@ -30,7 +29,7 @@ public class MovieMain {
 
                     System.out.print("고객 나이 (숫자 입력, 없으면 Enter): ");
                     String ageInput = scanner.nextLine();
-                    Integer age = ageInput.isEmpty() ? null : Integer.valueOf(ageInput); // null 가능
+                    Integer age = ageInput.isEmpty() ? null : Integer.valueOf(ageInput);
 
                     System.out.print("고객 주소 (없으면 Enter): ");
                     String address = scanner.nextLine();
@@ -48,7 +47,7 @@ public class MovieMain {
                     Movie newMovie = new Movie(
                             audienceId,
                             audienceName,
-                            age, // null 가능
+                            age,
                             address,
                             membershipRank
                     );
@@ -85,7 +84,7 @@ public class MovieMain {
 
                     System.out.print("새 고객 나이 (숫자 입력, 없으면 Enter): ");
                     String ageInput = scanner.nextLine();
-                    Integer age = ageInput.isEmpty() ? null : Integer.valueOf(ageInput); // null 가능
+                    Integer age = ageInput.isEmpty() ? null : Integer.valueOf(ageInput);
 
                     System.out.print("새 고객 주소 (없으면 Enter): ");
                     String address = scanner.nextLine();
@@ -103,7 +102,7 @@ public class MovieMain {
                     Movie updatedMovie = new Movie(
                             audienceId,
                             audienceName,
-                            age, // null 가능
+                            age, 
                             address,
                             membershipRank
                     );
