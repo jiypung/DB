@@ -1,48 +1,70 @@
-package db.test.movie.test;
+package test;
 
 public class Movie {
-    private String movieName;
-    private String screeningDate;
-    private int price;
-    private String paymentMethod;
-    private String paymentDate;
+    private String audienceId;
+    private String audienceName;
+    private int age;
+    private String address;
+    private String membershipRank;
 
-    public Movie(String movieName, String screeningDate, int price, String paymentMethod, String paymentDate) {
-        this.movieName = movieName;
-        this.screeningDate = screeningDate;
-        this.price = price;
-        this.paymentMethod = paymentMethod;
-        this.paymentDate = paymentDate;
+    // Constructor
+    public Movie(String audienceId, String audienceName, int age, String address, String membershipRank) {
+        this.audienceId = audienceId;
+        this.audienceName = audienceName;
+        this.age = age;
+        this.address = address;
+        this.membershipRank = membershipRank;
     }
 
-    public String getMovieName() {
-        return movieName;
+    // Getters and Setters
+    public String getAudienceId() {
+        return audienceId;
     }
 
-    public String getScreeningDate() {
-        return screeningDate;
+    public void setAudienceId(String audienceId) {
+        this.audienceId = audienceId;
     }
 
-    public int getPrice() {
-        return price;
+    public String getAudienceName() {
+        return audienceName;
     }
 
-    public String getPaymentMethod() {
-        return paymentMethod;
+    public void setAudienceName(String audienceName) {
+        this.audienceName = audienceName;
     }
 
-    public String getPaymentDate() {
-        return paymentDate;
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getMembershipRank() {
+        return membershipRank;
+    }
+
+    public void setMembershipRank(String membershipRank) {
+        this.membershipRank = membershipRank;
     }
 
     @Override
     public String toString() {
         return "Movie{" +
-                "movieName='" + movieName + '\'' +
-                ", screeningDate='" + screeningDate + '\'' +
-                ", price=" + price +
-                ", paymentMethod='" + paymentMethod + '\'' +
-                ", paymentDate='" + paymentDate + '\'' +
+                "audienceId='" + audienceId + '\'' +
+                ", audienceName='" + audienceName + '\'' +
+                ", age=" + age +
+                ", address='" + address + '\'' +
+                ", membershipRank='" + membershipRank + '\'' +
                 '}';
     }
 }
