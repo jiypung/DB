@@ -6,14 +6,20 @@
 
 
 ## 사용 방법
+<img width="155" alt="image" src="https://github.com/user-attachments/assets/738513ab-6514-4f3a-8dc4-201a8e23dc82" />
+
 1. 프로그램 실행 시, 메뉴가 출력됩니다.
 2. 원하는 작업에 해당하는 번호를 입력하여 작업을 수행합니다.
 3. 작업 완료 후 다시 메뉴가 표시되며, 필요시 다른 작업을 선택할 수 있습니다.
 4. 종료를 원할 경우 메뉴에서 `7`을 선택합니다.
 
+
+
 ## 주요 기능
 
 ### 1. 고객 추가
+<img width="310" alt="image" src="https://github.com/user-attachments/assets/b056487f-5445-4437-9f50-e1f12bfc0203" />
+
 - **설명**: 새로운 고객 정보를 데이터베이스에 추가합니다.
 - **입력 항목**:
   - 고객 ID: 고유한 식별자
@@ -28,6 +34,8 @@
 ---
 
 ### 2. 고객 조회 (전체)
+<img width="680" alt="image" src="https://github.com/user-attachments/assets/2a28bc5c-6430-41a1-9e49-19cfe6885434" />
+
 - **설명**: 데이터베이스에 등록된 모든 고객 정보를 출력합니다.
 - **출력 항목**:
   - 고객 ID
@@ -41,6 +49,8 @@
 ---
 
 ### 3. 고객 조회 (ID로)
+<img width="656" alt="image" src="https://github.com/user-attachments/assets/55dacda1-60c5-4c8f-a67f-85447cd67881" />
+
 - **설명**: 고객 ID를 입력하여 특정 고객 정보를 검색합니다.
 - **입력 항목**:
   - 고객 ID
@@ -56,6 +66,8 @@
 ---
 
 ### 4. 고객 정보 갱신
+<img width="313" alt="image" src="https://github.com/user-attachments/assets/41b8b071-40be-4089-9ff5-81b5aa7328c1" />
+
 - **설명**: 기존 고객 정보를 갱신합니다.
 - **입력 항목**:
   - 고객 ID: 갱신할 고객의 ID
@@ -67,6 +79,8 @@
 ---
 
 ### 5. 고객 삭제
+<img width="125" alt="image" src="https://github.com/user-attachments/assets/9f4d5603-5174-406a-b9d2-60d9cdf31fa8" />
+
 - **설명**: 고객 ID를 입력받아 해당 고객을 데이터베이스에서 삭제합니다.
 - **특이사항**:
   - 고객과 연결된 영화 및 결제 정보도 함께 삭제됩니다.
@@ -79,6 +93,8 @@
 ---
 
 ### 6. 고객 상세 정보 조회
+<img width="821" alt="image" src="https://github.com/user-attachments/assets/61934e43-4e70-42f4-9b64-725d8cb8017e" />
+
 - **설명**: 고객, 관람 영화, 결제 정보를 상세히 조회합니다.
 - **출력 항목**:
   - 고객 ID, 이름
@@ -90,6 +106,8 @@
 ---
 
 ### 7. 프로그램 종료
+<img width="226" alt="image" src="https://github.com/user-attachments/assets/c7e0b191-5b64-45e8-844e-9c9329cf961a" />
+
 - **설명**: 프로그램을 종료합니다.
 - **출력**:
   - `프로그램을 종료합니다.`
