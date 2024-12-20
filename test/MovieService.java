@@ -1,6 +1,6 @@
-package test;
+package db.test.movie;
 
-import io.mobile.conf.Conf;
+import io.moblie.conf.Conf;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -91,7 +91,6 @@ public class MovieService {
         try (Connection conn = DriverManager.getConnection(Conf.DB_URL, Conf.DB_USER, Conf.DB_PASSWORD)) {
             conn.setAutoCommit(false);
 
-            // 1. ticket 테이블과 연결된 payment 데이터 삭제
             String deletePayments = """
             DELETE FROM payment 
             WHERE ticket_id IN (
@@ -103,14 +102,12 @@ public class MovieService {
                 psmtDeletePayments.executeUpdate();
             }
 
-            // 2. ticket 테이블에서 고객 데이터 삭제
             String deleteTickets = "DELETE FROM ticket WHERE audience_id = ?";
             try (PreparedStatement psmtDeleteTickets = conn.prepareStatement(deleteTickets)) {
                 psmtDeleteTickets.setString(1, audienceId);
                 psmtDeleteTickets.executeUpdate();
             }
 
-            // 3. audience 테이블에서 고객 삭제
             String deleteAudience = "DELETE FROM audience WHERE audience_id = ?";
             try (PreparedStatement psmtDeleteAudience = conn.prepareStatement(deleteAudience)) {
                 psmtDeleteAudience.setString(1, audienceId);
@@ -119,7 +116,7 @@ public class MovieService {
                 conn.commit();
                 return result;
             } catch (SQLException e) {
-                conn.rollback(); 
+                conn.rollback();
                 throw e;
             }
 
@@ -129,8 +126,6 @@ public class MovieService {
         }
     }
 
-
-    // Select all audience with movies and payment details
     public static List<String> selectAudienceDetails() {
         List<String> audienceDetails = new ArrayList<>();
         String query = """
