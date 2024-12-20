@@ -1,4 +1,4 @@
-package test;
+package db.test.movie;
 
 public class Movie {
     private String audienceId;
@@ -7,7 +7,6 @@ public class Movie {
     private String address;
     private String membershipRank;
 
-    // Constructor
     public Movie(String audienceId, String audienceName, int age, String address, String membershipRank) {
         this.audienceId = audienceId;
         this.audienceName = audienceName;
@@ -16,7 +15,6 @@ public class Movie {
         this.membershipRank = membershipRank;
     }
 
-    // Getters and Setters
     public String getAudienceId() {
         return audienceId;
     }
