@@ -5,6 +5,26 @@
 
 ---
 
+## 데이터베이스 요구사항 명세서 작성
+1. 관객번호, 이름, 나이, 주소, 멤버십 등급을 저장하여 관객을 관리한다.
+
+2. 티켓번호, 영화명, 상영 날짜, 가격을 저장하여 영화 티켓을 관리한다.
+
+3. 한 명의 관객은 여러 티켓을 구매할 수 있다.
+
+4. 하나의 티켓은 반드시 한 명의 관객만 소유한다.
+
+5. 결제번호, 결제 날짜, 결제 방법을 저장하여 티켓 구매 결제를 관리한다.
+
+---
+
+## 개념적 설계 진행
+![image](https://github.com/user-attachments/assets/62e3f5d2-edd3-4afa-8190-633ec4514f03)
+
+![image](https://github.com/user-attachments/assets/6ba0d3d0-a26a-4a71-b95a-87ca1cc4a864)
+
+
+![image](https://github.com/user-attachments/assets/03577d95-e7bd-409d-8b70-5beea2e16106)
 
 ## 사용 방법
 <img width="155" alt="image" src="https://github.com/user-attachments/assets/738513ab-6514-4f3a-8dc4-201a8e23dc82" />
