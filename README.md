@@ -24,7 +24,8 @@
 ![image](https://github.com/user-attachments/assets/6ba0d3d0-a26a-4a71-b95a-87ca1cc4a864)
 
 
-![image](https://github.com/user-attachments/assets/03577d95-e7bd-409d-8b70-5beea2e16106)
+![image](https://github.com/user-attachments/assets/bd9923f0-2f82-4849-8681-82ab016efdf6)
+
 
 ## 사용 방법
 <img width="155" alt="image" src="https://github.com/user-attachments/assets/738513ab-6514-4f3a-8dc4-201a8e23dc82" />
@@ -132,5 +133,16 @@
 - **설명**: 프로그램을 종료합니다.
 - **출력**:
   - `프로그램을 종료합니다.`
+ 
+---
 
+## 기대효과
+
+- **효율적인 고객 관리**
+
+  - 고객 정보를 추가, 조회, 갱신, 삭제할 수 있어 고객 데이터 관리가 체계적으로 이루어집니다.
+  
+- **유연한 데이터 검색**
+
+  - 고객 ID를 기준으로 특정 고객을 조회하거나, 모든 고객의 목록을 확인할 수 있어 필요한 데이터를 빠르게 검색할 수 있습니다.
 
