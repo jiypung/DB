@@ -21,10 +21,12 @@
 ## 개념적 설계 진행
 ![image](https://github.com/user-attachments/assets/62e3f5d2-edd3-4afa-8190-633ec4514f03)
 
-![image](https://github.com/user-attachments/assets/6ba0d3d0-a26a-4a71-b95a-87ca1cc4a864)
+![image](https://github.com/user-attachments/assets/c2115840-a020-42c9-8ed8-61f93fcf1685)
 
 
-![image](https://github.com/user-attachments/assets/bd9923f0-2f82-4849-8681-82ab016efdf6)
+
+![image](https://github.com/user-attachments/assets/6108adeb-2362-4efa-bb52-1593d8205d69)
+
 
 
 ## 사용 방법
